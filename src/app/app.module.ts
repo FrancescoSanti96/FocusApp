@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 @NgModule({
   declarations: [AppComponent, TitleComponent, FormComponent],
   imports: [
@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
