@@ -12,9 +12,19 @@
           name="taskInput"
         />
       </mat-form-field>
-      <button mat-stroked-button color="primary" (click)="onSubmit(task.value)">
+
+      <button
+        *ngIf="button; else loading"
+        mat-stroked-button
+        color="primary"
+        (click)="onSubmit(task.value)"
+      >
         Start
       </button>
+
+      <ng-template #loading>
+        <button mat-stroked-button color="primary">Stop</button>
+      </ng-template>
     </form>
   </div>
 
