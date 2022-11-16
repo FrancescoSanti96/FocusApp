@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormGroupDirective,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -8,6 +14,8 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
   tasks: string[] = [];
   button: boolean = true;
+
+  taskFormControl = new FormControl('', [Validators.required]);
   constructor() {}
 
   ngOnInit(): void {}

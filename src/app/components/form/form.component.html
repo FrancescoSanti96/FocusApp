@@ -6,11 +6,15 @@
         <input
           #task
           matInput
+          [formControl]="taskFormControl"
           placeholder="Sviluppare il codice"
           required
           ngModel
           name="taskInput"
         />
+        <mat-error *ngIf="taskFormControl.hasError('required')">
+          Task is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
 
       <button
@@ -18,6 +22,7 @@
         mat-stroked-button
         color="primary"
         (click)="onSubmit(task.value)"
+        [disabled]="taskFormControl.hasError('required')"
       >
         Start
       </button>
