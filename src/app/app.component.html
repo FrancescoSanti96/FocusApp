@@ -1,4 +1,10 @@
 <div>
   <app-title></app-title>
   <app-form class="form"></app-form>
+  <div class="example-button-container form">
+    <button mat-mini-fab color="green" (click)="onPlusTasks()">+</button>
+    <div *ngFor="let task of plusTasks">
+      <app-form class="form"></app-form>
+    </div>
+  </div>
 </div>
